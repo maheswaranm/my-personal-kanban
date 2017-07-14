@@ -27,8 +27,11 @@ angular.module('mpk').directive('mpkModal', function () {
         scope.$watch(attrs.visible, function(value){
           if(value == true)
             $(element).modal('show');
-          else
+          else {
             $(element).modal('hide');
+            $('body').removeClass('modal-open');
+            $('.modal-backdrop').remove();
+          }
         });
 
         $(element).on('shown.bs.modal', function(){
