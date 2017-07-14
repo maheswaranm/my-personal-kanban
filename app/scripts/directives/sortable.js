@@ -42,7 +42,7 @@ angular.module('mpk').value('uiSortableConfig',{}).directive('uiSortable', [
             scope.$watch(attrs.ngModel+'.length', function() {
               // Timeout to let ng-repeat modify the DOM
               $timeout(function() {
-                element.sortable('refresh');
+                element.sortable().sortable('refresh');
               });
             });
 
