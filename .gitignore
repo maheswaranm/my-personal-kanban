@@ -7,7 +7,7 @@ stories_*
 .DS_Store
 */.*
 node_modules/
-app/bower_modules/
+app/bower_components/
 .tmp/
 dist/
 bower_components/
