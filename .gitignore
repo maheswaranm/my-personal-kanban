@@ -12,3 +12,4 @@ app/bower_components/
 dist/
 bower_components/
 npm-*.log
+*.zip
