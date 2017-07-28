@@ -189,8 +189,16 @@
   </div>
 
   <div ng-controller="CardController">
-    <mpk-modal title="Card details" visible="showCardDetails">
-        <form class="noMargin" name="cardDetails">
+    <mpk-modal id="card" title="Card details" visible="showCardDetails">
+      <div ng-show="!editing">
+        <div>
+          <b>{{card.name}}</b>
+        </div>
+        <div style="margin-top:10px;margin-bottom:10px;">
+          {{card.details}}        
+        </div>
+      </div>
+        <form ng-show="editing" class="noMargin" name="cardDetails">
           <div class="form-group">
               <label class="control-label" for="cardTitle">Kanban card title</label>
               <div class="controls">
@@ -227,6 +235,10 @@
           </div>
         </form>
         <div class="modal-footer">
+          <div class="pull-left" ng-show="!editing">
+            <a class="btn btn-default" ng-click="editCard()">Edit</a>
+          </div>
+
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
     </mpk-modal>

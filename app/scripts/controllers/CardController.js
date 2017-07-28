@@ -17,5 +17,16 @@ var CardController = function ($scope) {
 		$scope.showCardDetails = true;
 	});
 
+	$scope.editing=false;
+	$scope.editCard = function() {
+		$scope.editing=true;
+	}
+
+	$("#card").on('hidden.bs.modal', function(){
+		$scope.$apply(function(){
+			$scope.editing = false;
+		});
+	});
+
 };
 mpkModule.controller('CardController', CardController);
