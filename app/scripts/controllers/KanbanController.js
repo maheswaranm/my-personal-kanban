@@ -62,6 +62,10 @@ angular.module('mpk').controller('KanbanController', function KanbanController($
 		return kanbanManipulator.archiveCard(kanban, column, card);
 	};
 
+	$scope.archiveAllCards = function(kanban, column){
+		return kanbanManipulator.archiveAllCards(kanban, column);
+	};
+
 	$scope.columnSettings = function(kanban, column){
 		$scope.$broadcast('OpenColumnSettings', kanban, column);
 	};

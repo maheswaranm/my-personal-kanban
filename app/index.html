@@ -99,6 +99,7 @@
             <div class="columnHeader">
                <a title="Column settings" ng-click="columnSettings(kanban, column)" ng-model="column" ng-hide="editing"><i class="glyphicon glyphicon-wrench"></i></a>
                 <a title="Add card to column" class="pull-right" ng-click="addNewCard(column)" ng-hide="columnLimitsReached(column)"><i class="glyphicon glyphicon-plus"></i></a>
+                <a class="pull-right" title="Archive All Cards" ng-click="archiveAllCards(kanban, column)" ng-show="isLastColumn(column.name, kanban)"><i class="glyphicon glyphicon-folder-close"></i></a>
                 <span>{{column.name}} ({{columnLimitsTextFor(column)}})</span>
             </div>
             <ul ng-class="sortableClassFor(column)" ui-sortable="{connectWith: '#kanban ul.cards'}" ng-model="column.cards" style="min-height:{{columnHeight}}px;max-height:{{columnHeight}}px;">

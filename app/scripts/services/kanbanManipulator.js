@@ -30,6 +30,16 @@ angular.module('mpk').factory('kanbanManipulator', function () {
       });
     },
 
+    archiveAllCards: function(kanban,column) {
+      angular.forEach(kanban.columns,function(col){
+        if(col.name === column.name) {
+          while(col.cards.length > 0) {
+            this.archiveCard(kanban,column,col.cards[0]);
+          }
+        }
+      },this);
+    },
+
     archiveCard: function(kanban, column, card){
       if (kanban.archived == undefined){
         kanban.archived = [];
