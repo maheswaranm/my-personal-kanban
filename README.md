@@ -1,46 +1,44 @@
-My Personal Kanban (MPK)
+My Personal Kanban
 ==========================
 
-This is a small and simple in-browser application that aspire to be offline Personal Kanban board.
+A very simple Offline Personal Kanban board.
 
-It is a single page JavaScript application with very basic functionality. 
+[Get latest release zip from this repo.](https://api.github.com/repos/maheswaranm/my-personal-kanban/zipball)
 
-## Download
-
-You can get latest release zip from this repo at [at this link](https://api.github.com/repos/maheswaranm/my-personal-kanban/zipball). Lastest version is 0.8.0 and includes new features.
+This repo includes my ideas on top of the wonderful project by [Greg Gigon](https://github.com/greggigon).
+Greg's original version is available [here](https://github.com/greggigon/my-personal-kanban).
 
 ## How to use it?
 
-Download the applicaton distribution zip file, unzip it at your prefered location, open __index.html__ page in your browser and your done.
+* Download the [zip file](https://api.github.com/repos/maheswaranm/my-personal-kanban/zipball)
+* Unzip at your preferred location
+* Open `index.html` in your browser
+* Kanban away!
 
-There is no need to be connected to Internet to use it. You can run it in any modern browser. The application will store your data in Web Browser's local storage, so you will not loose it.
+## Build your own from source
 
-### Functionality
-
-The functionality is very simple and basic. For a short screencast demo you can navigate to [Github pages](http://greggigon.github.io/my-personal-kanban/) .
-
-Kanban boards with 2 to 10 columns, name columns and delete kanban.
-
-You can add cards to columns and drag them between columns as well as remove them.
-
-## Adding Themes
-
-Themes are just a simple CSS files. They should be put in the __styles/themes__ folder. New Theme should be added to __scripts/themes.js__ file. Also, a Theme image (jpg) can be placed in __img/themes__ folder. Name of the image should be the same as the __css__ attribute in the themes.js file.
-
-## A bit of history
-
-I started this little project 2 years ago when I decided to familiarise myself with HTML5, Pure JavaScript and CSS.
-
-I used jQuery with QUnit for JavaScript TDD testing.
-
-I managed to get it to a workable state and stop developing it.
-
-After first public release not too long ago, I decided to rewrite it in __Angular__.
-
-This application is the result of me doing so, while attempting to learn Angular at the same time :)
-
-### Want to help?
-
-If you want to help me with styling or anything else, please do get in touch.
-
-Any issues, raise it on github.
+1. Pre-requisites
+    - [npm](https://www.npmjs.com/get-npm)
+    - [bower](https://bower.io/#install-bower)
+2. Clone the repository
+    ``` 
+    git clone https://github.com/maheswaranm/my-personal-kanban.git
+    ```
+3. Install the dev, build and test dependencies from the package.json 
+    ```
+    npm install
+    ```
+    
+4. Install all the app components from the bower.json
+    ```
+    bower install
+    ```
+5. Make changes to the code in `app` folder
+6. Update tests in the `test` folder
+7. When its time to build and distribute
+    ```
+    grunt build
+    ```
+    This will create a new zip file in your folder with the distributable version.  
+    JS and CSS are minified.  
+    The version number for the zip file is taken from the `bower.json` file
