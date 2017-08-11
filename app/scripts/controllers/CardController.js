@@ -28,5 +28,14 @@ var CardController = function ($scope) {
 		});
 	});
 
+	$scope.getCardModalTitle = function() {
+		if($scope.editing === false ){
+			return $scope.card.name;
+		}
+		else {
+			return "Card Details";
+		}
+	}
+
 };
 mpkModule.controller('CardController', CardController);
