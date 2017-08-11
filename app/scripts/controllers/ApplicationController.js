@@ -194,6 +194,8 @@ angular.module('mpk').controller('ApplicationController',
 	}
 
 	$scope.kanban = currentKanban;
+	document.title = currentKanban.name +" | My Personal Kanban";
+	
 	$scope.allKanbans = Object.keys(kanbanRepository.all());
 	$scope.selectedToOpen = $scope.newName = currentKanban.name;
 
