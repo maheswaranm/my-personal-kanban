@@ -200,7 +200,6 @@ angular.module('mpk').controller('ApplicationController',
 	$scope.selectedToOpen = $scope.newName = currentKanban.name;
 
 	$scope.switchToList = $scope.allKanbans.slice(0);
-	$scope.switchToList.splice(0, 0, 'Switch to ...');
 	$scope.switchTo = 'Switch to ...';
 
 	$scope.$watch('kanban', function(){

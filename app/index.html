@@ -80,13 +80,14 @@
           <span id="message" class="">{{infoMessage}}</span>
           <span id="spinner" class="pull-right" spin="spinConfig" spin-if="showSpinner"></span>
         </div>
-        <div id="quickSwitch" class="pull-right form-group">
-          <form>
-            <select ng-model="switchTo" ng-options="name for name in switchToList" ng-change="switchToKanban(switchTo)">
-              <option>Switch to ...</option>
-            </select>
-          </form>
-        </div>
+        <ul class="nav navbar-nav pull-right" id="kanbanListMenu">
+            <li class="dropdown"> 
+              <a class="dropdown-toggle" data-toggle="dropdown">Switch Kanban <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li ng-repeat="name in switchToList"><a ng-click="switchToKanban(name)" href=""><i class="glyphicon glyphicon-wrench"></i>{{name}}</a></li>
+              </ul>
+            </li>
+          </ul>
       </div>
     </div>
   </div>
