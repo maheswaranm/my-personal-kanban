@@ -2,7 +2,7 @@
 
 angular.module('mpk').directive('mpkModal', function () {
 	return {
-      template: '<div class="modal fade">' + 
+      template: '<div class="modal fade" style="white-space:normal">' + 
           '<div class="modal-dialog" style="{{ style }}" >' + 
             '<div class="modal-content">' + 
               '<div class="modal-header">' + 

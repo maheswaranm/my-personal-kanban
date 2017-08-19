@@ -16,8 +16,23 @@ angular.module('mpk').controller('ApplicationController',
 	});
 
 	$scope.$on('ColumnsChanged', function(){
-		$scope.columnWidth = calculateColumnWidth($scope.kanban.columns.length);
+		$scope.columnWidth = "300px";
+		$scope.columnHeight = calculateColumnHeight();
 	});
+
+	function calculateColumnHeight() {
+		var maxHeight = 0;
+		angular.forEach(
+			angular.element('#columns').children(),
+			function(col,index){
+				var colHeight = angular.element('#'+col.id).find('.cards').height();
+				if(colHeight > maxHeight) {
+					maxHeight=colHeight
+				}
+			}
+		);
+		return maxHeight;
+	}
 
 	function calculateColumnWidth(numberOfColumns){
 		return Math.floor((100 / numberOfColumns) * 100) / 100;
@@ -207,7 +222,14 @@ angular.module('mpk').controller('ApplicationController',
 	}, true);
 
 	$scope.columnHeight = angular.element($window).height() - 110;
+	setTimeout(function(){
+		$scope.$apply(function(){
+			$scope.$broadcast('ColumnsChanged');
+		});
+	},1000);
+	
 	$scope.columnWidth = calculateColumnWidth($scope.kanban.columns.length);
+	$scope.columnWidth = "300px";
 
 	$scope.triggerOpen = function(){
 		$scope.$broadcast('TriggerOpenKanban');

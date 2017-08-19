@@ -131,6 +131,7 @@ angular.module('mpk').value('uiSortableConfig',{}).directive('uiSortable', [
                   ngModel.$modelValue.splice(ui.item.sortable.dropindex, 0,
                                              ui.item.sortable.moved);
                 });
+                scope.$emit('ColumnsChanged');
               }
             };
 
@@ -146,7 +147,8 @@ angular.module('mpk').value('uiSortableConfig',{}).directive('uiSortable', [
                   ngModel.$modelValue.splice(
                     ui.item.sortable.dropindex, 0,
                     ngModel.$modelValue.splice(ui.item.sortable.index, 1)[0]);
-                });
+                  });
+                scope.$emit('ColumnsChanged');
               } else {
                 // if the item was not moved, then restore the elements
                 // so that the ngRepeat's comment are correct.
@@ -169,7 +171,8 @@ angular.module('mpk').value('uiSortableConfig',{}).directive('uiSortable', [
                 scope.$apply(function () {
                   ui.item.sortable.moved = ngModel.$modelValue.splice(
                     ui.item.sortable.index, 1)[0];
-                });
+                  });
+                scope.$emit('ColumnsChanged');
               }
             };
 
