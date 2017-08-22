@@ -19,7 +19,7 @@ var NewKanbanCardController = function ($scope, kanbanManipulator) {
 		}
 		kanbanManipulator.addCardToColumn($scope.kanban, $scope.column, newCard.title, newCard.details, newCard.cardColor);
 		$scope.newCard = angular.copy($scope.master);
-
+		$scope.$emit('ColumnsChanged');
 		
 		$scope.showNewCard = false;
 

@@ -10,6 +10,7 @@ angular.module('mpk').controller('KanbanController', function KanbanController($
 		if (confirm('You sure?')){
 			kanbanManipulator.removeCardFromColumn($scope.kanban, column, card);
 		}
+		$scope.$broadcast('ColumnsChanged');		
 	};
 
 	$scope.openCardDetails = function(card){
