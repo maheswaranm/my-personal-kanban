@@ -58,6 +58,14 @@ angular.module('mpk').controller('KanbanController', function KanbanController($
 
 	};
 
+	$scope.matchesSearch = function(card,searchParam) {
+		//if searchParam is atleast one character then filter cards
+		if(searchParam.trim() && card.name.indexOf(searchParam) == -1 ) {
+			return false;
+		}
+		return true;
+	}
+
 
 	$scope.archive = function(kanban, column, card){
 		return kanbanManipulator.archiveCard(kanban, column, card);
