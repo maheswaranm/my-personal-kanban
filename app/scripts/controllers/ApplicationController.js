@@ -15,6 +15,8 @@ angular.module('mpk').controller('ApplicationController',
 		$scope.switchToList.splice(0,0,'Switch to ...');
 	});
 
+	$scope.kanbanSearch = "";
+
 	$scope.$on('ColumnsChanged', function(){
 		$scope.columnWidth = "300px";
 		$scope.columnHeight = calculateColumnHeight();
