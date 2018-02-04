@@ -13,3 +13,4 @@ dist/
 bower_components/
 npm-*.log
 *.zip
+!.surgeignore
