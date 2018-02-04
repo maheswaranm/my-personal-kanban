@@ -3,6 +3,8 @@ My Personal Kanban
 
 A very simple Offline Personal Kanban board.
 
+# [Try It Out here](http://my-personal-kanban.surge.sh/)
+
 [Get latest release zip from this repo.](https://api.github.com/repos/maheswaranm/my-personal-kanban/zipball)
 
 This repo includes my ideas on top of the wonderful project by [Greg Gigon](https://github.com/greggigon).
